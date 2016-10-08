@@ -36,6 +36,7 @@ function search() {
     myMap(lat, lng);
 }
 
+
 function myMap(lat, lng) {
     var mapCanvas = document.getElementById("map");
     var mapOptions = {
