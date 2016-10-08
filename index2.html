@@ -1,0 +1,68 @@
+<!-- Find Your New BFF -->
+<!-- aaaaaaaah -->
+<!DOCTYPE html>
+<html>
+<title>Find Your New BFF</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<ul class="w3-navbar w3-white w3-border-bottom w3-xlarge">
+    <li><a href="#" class="w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>FYNBFF</b></a></li>
+    <li class="w3-right"><a href="#" class="w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a></li>
+</ul>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+    <img class="w3-image" src="img/dog-black.jpeg" alt="London" width="1500" height="700">
+    <div class="w3-display-middle" style="width:65%">
+        <ul class="w3-navbar w3-black">
+            <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Event');"><i class="fa fa-plane w3-margin-right"></i>Event</a></li>
+            <li><a class="tablink" onclick=""><i class="fa fa-plane w3-margin-right"></i>B</a></li>
+        </ul>
+
+        <!-- Tabs -->
+        <div id="Event" class="home-hover-box myLink">
+            <div class="w3-row-padding" style="margin:0 -16px;">
+                <div class="half-hover-box" >
+                    <h3>Find events near you</h3>
+                    <label>Zip Code</label>
+                    <form id="initalForm">
+                        <select id="situation"> <!--onchange="changeLocation()">-->
+                            <option selected disabled>#####</option>
+                            <option value="beach">Somewhere cool and breezy</option>
+                            <option value="city">Somewhere popular and busy</option>
+                        </select>
+                    </form>
+                    <p><button class="w3-btn w3-dark-grey half" onclick="search()">Search and find events</button></p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="Maps" class="home-hover-box myLink">
+
+
+            <div id="map" style="width:100%;height:500px"></div>
+
+            <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+        </div>
+    </div>
+</header>
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+    <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script src="js/javascript.js" type="text/javascript"></script>
+
+</body>
+</html>
+
