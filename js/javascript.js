@@ -25,7 +25,7 @@ function search() {
     openLink(event, 'Maps');
     var lat = 0;
     var lng = 0;
-    if (myLocation == "beach"){
+    if (myLocation == "07950"){
         lat = 42.57;
         lng = -70.79;
     }
