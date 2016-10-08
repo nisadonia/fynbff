@@ -12,16 +12,20 @@
 
 <!-- Navigation Bar -->
 <ul class="w3-navbar w3-white w3-border-bottom w3-xlarge">
-    <li><a href="#" class="w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Find Your New Best Friend</b></a></li>
+    <li><a href="" class="w3-text-red w3-hover-red"><b><i class="fa fa-map-marker w3-margin-right"></i>Find Your New Best Friend</b></a></li>
     <li class="w3-right"><a href="#" class="w3-hover-red w3-text-grey"><i class="fa fa-search"></i></a></li>
 </ul>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
-    <img class="w3-image" src="img/dog-black.jpeg" alt="London" width="1500" height="700">
+    <img class="w3-image" src="img/dog-black.jpeg" alt="London" height=100%>
     <div class="w3-display-middle" style="width:65%">
         <ul class="w3-navbar w3-black">
+<<<<<<< HEAD
             <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Event');"><i class="fa fa-plane w3-margin-right"></i><!--Events--></a></li>
+=======
+            <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Event');">Event</a></li>
+>>>>>>> origin/master
             <li><a class="tablink" onclick=""></a></li> <!-- You need this so that the tabs show up correctly-->
         </ul>
 
@@ -47,8 +51,9 @@
 
         <div id="Maps" class="home-hover-box myLink">
             <div id="map-canvas"></div>
+            <h3>Filter</h3>
             <select id="type" onchange="filterMarkers(this.value);">
-                <option selected disabled>Please select category</option>
+                <option value="">Please select category</option>
                 <option value="eve">Events</option>
                 <option value="ads">Adoption Sites</option>
                 <option value="vop">Volunteer Opportunities</option>

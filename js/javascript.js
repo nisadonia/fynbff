@@ -37,18 +37,37 @@ function search() {
 }
 
 function zipCode(){
+
     openLink(event, 'Event');
 }
+
+var gmarkers1 = [];
+var markers1 = [];
+var infowindow = new google.maps.InfoWindow({
+    content: ''
+});
+
+// Our markers
+markers1 = [
+    ['0', 'Title', 51.508742, -0.120850, 'eve'],
+    ['1', 'Title', 51.508742, -0.110850, 'ads'],
+    ['2', 'Title', 51.528742, -0.140850, 'ads'],
+    ['3', 'Title', 51.518742, -0.130850, 'vop']
+];
+
+/**
+ * Function to init map
+ */
 
 
 function myMap(lat, lng) {
     var mapCanvas = document.getElementById("map");
-    var uluru = {lat: 51.508742, lng: -0.120850};
+    var center = new google.maps.LatLng(lat, lng);
     var mapOptions = {
-        center: new google.maps.LatLng(lat, lng),
+        center: center,
         zoom: 10,
         panControl: false,
-        zoomControl: false,
+        zoomControl: true,
         mapTypeControl: false,
         scaleControl: false,
         streetViewControl: false,
@@ -56,35 +75,60 @@ function myMap(lat, lng) {
         rotateControl: false
     };
 
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-
-
-
-    var contentString = '<div id="content">'+
-        '<div id="siteNotice">'+
-        '</div>'+
-        '<h1 id="firstHeading" class="firstHeading">Uluru Dog Meet & Greet</h1>'+
-        '<div id="bodyContent">'+
-        '<p><b>Location:</b> London Pier </p>' +
-        '<p><b>Date:</b> Today from noon to midnight</p>' +
-        '<p>Facebook Event Link</p>'+
-        '</div>'+
-        '</div>';
-
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
-    });
-
-    var marker = new google.maps.Marker({
-        position: uluru,
-        map: map,
-        title: 'Uluru (Ayers Rock)'
-    });
-    marker.addListener('click', function() {
-        infowindow.open(map, marker);
-    });
-
+    map = new google.maps.Map(mapCanvas, mapOptions);
+    for (i = 0; i < markers1.length; i++) {
+        addMarker(markers1[i]);
+    }
 }
+
+/**
+ * Function to add marker to map
+ */
+
+function addMarker(marker) {
+    var category = marker[4];
+    var title = marker[1];
+    var pos = new google.maps.LatLng(marker[2], marker[3]);
+    var content = marker[1];
+
+    marker1 = new google.maps.Marker({
+        title: title,
+        position: pos,
+        category: category,
+        map: map
+    });
+
+    gmarkers1.push(marker1);
+
+    // Marker click listener
+    google.maps.event.addListener(marker1, 'click', (function (marker1, content) {
+        return function () {
+            //console.log('Gmarker 1 gets pushed');
+            infowindow.setContent(content);
+            infowindow.open(map, marker1);
+        }
+    })(marker1, content));
+}
+
+/**
+ * Function to filter markers by category
+ */
+
+filterMarkers = function (category) {
+    for (i = 0; i < markers1.length; i++) {
+        marker = gmarkers1[i];
+        // If is same category or category not picked
+        if (marker.category == category || category.length === 0) {
+            marker.setVisible(true);
+        }
+        // Categories don't match
+        else {
+            marker.setVisible(false);
+        }
+    }
+}
+
+
 
 
 
