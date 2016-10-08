@@ -22,7 +22,7 @@
     <div class="w3-display-middle" style="width:65%">
         <ul class="w3-navbar w3-black">
             <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Event');"><i class="fa fa-plane w3-margin-right"></i>Event</a></li>
-            <li><a class="tablink" onclick=""><i class="fa fa-plane w3-margin-right"></i>B</a></li>
+            <li><a class="tablink" onclick=""></a></li> <!-- You need this so that the tabs show up correctly-->
         </ul>
 
         <!-- Tabs -->
@@ -46,18 +46,26 @@
         </div>
 
         <div id="Maps" class="home-hover-box myLink">
-
+            <div id="map-canvas"></div>
+            <select id="type" onchange="filterMarkers(this.value);">
+                <option selected disabled>Please select category</option>
+                <option value="eve">Events</option>
+                <option value="ads">Adoption Sites</option>
+                <option value="vop">Volunteer Opportunities</option>
+            </select>
 
             <div id="map" style="width:100%;height:500px"></div>
 
             <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+            <p><button class="w3-btn w3-dark-grey half" onclick="zipCode()">Enter New Zip Code</button></p>
 
         </div>
     </div>
 </header>
 
 <!-- Footer -->
-<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+<footer class="footer">
     <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 

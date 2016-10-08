@@ -36,6 +36,10 @@ function search() {
     myMap(lat, lng);
 }
 
+function zipCode(){
+    openLink(event, 'Event');
+}
+
 
 function myMap(lat, lng) {
     var mapCanvas = document.getElementById("map");
