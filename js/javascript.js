@@ -67,7 +67,7 @@ function myMap(lat, lng) {
         center: center,
         zoom: 10,
         panControl: false,
-        zoomControl: false,
+        zoomControl: true,
         mapTypeControl: false,
         scaleControl: false,
         streetViewControl: false,
