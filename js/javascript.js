@@ -29,9 +29,13 @@ function search() {
         lat = 42.57;
         lng = -70.79;
     }
-    else if (myLocation == "city"){
+    else if (myLocation == "14221"){
         lat = 51.5;
         lng = -0.2;
+    }
+    else if (myLocation == "14051"){
+        lat = 43;
+        lng = -78.7;
     }
     myMap(lat, lng);
 }
