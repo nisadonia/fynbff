@@ -21,7 +21,7 @@
     <img class="w3-image" src="img/dog-black.jpeg" alt="London" width="1500" height="700">
     <div class="w3-display-middle" style="width:65%">
         <ul class="w3-navbar w3-black">
-            <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Event');"><i class="fa fa-plane w3-margin-right"></i>Event</a></li>
+            <li><a href="javascript:void(0)" class="tablink" onclick="openLink(event, 'Event');">Event</a></li>
             <li><a class="tablink" onclick=""></a></li> <!-- You need this so that the tabs show up correctly-->
         </ul>
 
@@ -47,8 +47,9 @@
 
         <div id="Maps" class="home-hover-box myLink">
             <div id="map-canvas"></div>
+            <h3>Filter</h3>
             <select id="type" onchange="filterMarkers(this.value);">
-                <option selected disabled>Please select category</option>
+                <option value="">Please select category</option>
                 <option value="eve">Events</option>
                 <option value="ads">Adoption Sites</option>
                 <option value="vop">Volunteer Opportunities</option>
